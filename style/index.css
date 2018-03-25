@@ -1,9 +1,21 @@
-.btn-round {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+span.contact-name {
+  display: inline-block;
+  width: 150px;
 }
-.btn-round.btn-lg {
-  width: 48px;
-  height: 48px;
+
+span.user-circle {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.manipulate-name {
+  margin: 20px;
+  display: inline;
+}
+.delete-name {
+  margin: 10px;
 }
