@@ -1,8 +1,11 @@
-span.contact-name {
+button.contact-name {
   display: inline-block;
   width: 150px;
 }
 
+button.delete-name {
+  display: inline-block;
+}
 span.user-circle {
   display: inline-block;
   padding-right: 15px;
