@@ -5,6 +5,7 @@ button.contact-name {
 
 button.delete-name {
   display: inline-block;
+  margin: 10px;
 }
 span.user-circle {
   display: inline-block;
@@ -20,5 +21,4 @@ li {
   display: inline;
 }
 .delete-name {
-  margin: 10px;
 }
