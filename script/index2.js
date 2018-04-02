@@ -1,90 +1,71 @@
-
-
 var list = document.querySelector("#contactNames");
 var lastId = 0;
 var additionalInfo = document.createElement("ul");
 
-
-function dothis() {
+function submitButton() {
   //get the input value
   var contact = document.getElementById("contact").value;
 
-   if (contact == "") {
-  alert("Please insert a valid Name")
+  if (contact == "") {
+    alert("Please insert a valid Name");
+  } else {
+    //dynamically create a list element
+    var entry = document.createElement("li");
+    //Append typed contact to the list element
+    entry.appendChild(document.createTextNode(contact));
+    //set the ID of the created contact
+    var test = "item" + lastId;
+    entry.setAttribute("id", test);
+    //Add an Id to contact details
+
+    // create remove Button, set dynamic ID and font awesome icons and add button to list element
+    var removeButton = document.createElement("button");
+    setAttributes(removeButton, {
+      onClick: 'removeName("' + "item" + lastId + '")',
+      class: "fas" + " fa-trash-alt"
+    });
+    entry.appendChild(removeButton);
+
+    //create Edit Button set dynamic ID and font awesome icons add button to list element
+    var EditButton = document.createElement("i");
+    setAttributes(EditButton, {
+      onClick: 'EditName("' + "item" + lastId + '")',
+      class: "fas" + " fa-edit"
+    });
+    entry.appendChild(EditButton);
+
+    //dynamic Additional info for ul
+    var additionalInfo = document.createElement("ul");
+    entry.appendChild(additionalInfo);
+    additionalInfo.setAttribute("style", "display : none");
+    additionalInfo.setAttribute("class", "moreInfo");
+    additionalInfo.setAttribute("id", "list" + lastId);
+
+    document.getElementById("contact").value = "";
+
+    //dynamically increase the ID
+    lastId += 1;
+    //append entry to thr list
+    list.appendChild(entry);
+
+    //Creating Additional Info Items for Number
+    var additionalInfoNumber = document.createElement("li");
+    additionalInfoNumber.appendChild(document.createTextNode("Number"));
+    additionalInfo.appendChild(additionalInfoNumber);
+
+    //Creating Additional Info Items for email
+    var additionalInfoEmail = document.createElement("li");
+    additionalInfoEmail.appendChild(document.createTextNode("email"));
+    additionalInfo.appendChild(additionalInfoEmail);
+
+    //Toggling the Additional list items
+    $("#" + test).click(function() {
+      $(" #" + test + " .moreInfo").toggle();
+    });
   }
-  else{
-
-    
-  //dynamically create a list element
-  var entry = document.createElement("li");
-  //Append typed contact to the list element
-  entry.appendChild(document.createTextNode(contact));
-  //set the ID of the created contact
-  var test =  "item" + lastId;
- entry.setAttribute("id", test);
-//Add an Id to contact details
-//  setAttributes(contact, {"onClick" : 'expandContact("' + "item" + lastId + '")',"class": "fas" + " fa-edit" });
-
-
-  // create remove Button
-  var removeButton = document.createElement("button");
-  //set dynamic ID and font awesome icons
-  // removeButton.setAttribute("onClick", 'removeName("' + "item" + lastId + '")');
-  // removeButton.setAttribute("class", "fas" + " fa-trash-alt");
-  setAttributes(removeButton, {"onClick": 'removeName("' + "item" + lastId + '")', "class": "fas" + " fa-trash-alt"});
-  //add button to list element
-  entry.appendChild(removeButton);
-
-
-  //create Edit Button
-  var EditButton = document.createElement("i");
-  //set dynamic ID and font awesome icons
-  // EditButton.setAttribute("onClick", 'EditName("' + "item" + lastId + '")');
-  // EditButton.setAttribute("class", "fas" + " fa-edit");
-setAttributes(EditButton, {"onClick" : 'EditName("' + "item" + lastId + '")',"class": "fas" + " fa-edit" });
-    //add button to list element
-  entry.appendChild(EditButton);
-
-
- //dynamic Additional info for ul
-  var additionalInfo = document.createElement("ul");
-  entry.appendChild(additionalInfo);
-  additionalInfo.setAttribute("style", "display : none");
-  additionalInfo.setAttribute("class", "moreInfo");
- additionalInfo.setAttribute("id", "list" + lastId); 
-  
-
-
-  //dynamically increase the ID
-  lastId += 1;
-  //append entry to thr list
-  list.appendChild(entry);
-
-  
-  var additionalInfoNumber = document.createElement("li");
-  additionalInfoNumber.appendChild(document.createTextNode("Number"));
-  additionalInfo.appendChild(additionalInfoNumber);
-
-  var additionalInfoEmail = document.createElement("li");
-  additionalInfoEmail.appendChild(document.createTextNode("email"));
-  additionalInfo.appendChild(additionalInfoEmail);
-  }
-   
- 
-
- 
 }
-
-
-// function toggleContact(){
-// // $('#item' + (lastId - 1) ).click(function(){
-// $( + '#item' + (lastId - 1) + " .moreInfo").toggle();
-// }
-
-
-
- function setAttributes(el, attrs) {
-  for(var key in attrs) {
+function setAttributes(el, attrs) {
+  for (var key in attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
@@ -96,7 +77,3 @@ function removeName(itemid) {
 function EditName(itemid) {
   var item = document.getElementById(itemid);
 }
-
-
-
-
