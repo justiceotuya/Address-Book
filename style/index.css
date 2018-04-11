@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .contactForm{
   display: block;
   margin: 0 auto ;
@@ -26,3 +27,29 @@
 li{
   list-style-type: none;
 }
+=======
+button.contact-name {
+  display: inline-block;
+  width: 150px;
+}
+
+button.delete-name {
+  display: inline-block;
+  margin: 10px;
+}
+span.user-circle {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.manipulate-name {
+  margin: 20px;
+  display: inline;
+}
+.delete-name {
+}
+>>>>>>> d56c0b12356f26e19e38fe4e7f5459b5d5716acb

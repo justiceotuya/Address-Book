@@ -2,46 +2,78 @@
 <html lang="en">
 
 <head>
-    <title> Address Book</title>
+    <title> Add New Contact</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" -->
-        <!-- crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style/index.css">
 
 </head>
 
 <body>
-    <div class="parent">
-        <div>Child1</div>
-    <div>
-        <div class="subclass1">Subclass 1</div>
-        <div>Subclass 2</div>
+    <div class="container">
+        <div class="title">
+            <h1>Contact Book</h1>
+        </div>
+        <div class="addSign"><button id="addSign">+ New Contact</button></div>
+        <div class="addForm">
+            <label for="fullName">Name </label><input type="text"  id="fullName" class="contactForm">
+        
+            <label for="phoneNumber">Phone Number</label><input type="number" id="phoneNumber" class="contactForm">
+        
+            <label for="address">Address</label><textarea type="text" id="address" cols="30" rows="10" class="contactForm"></textarea>
+        
+            <label for="email">e-Mail</label><input type="email" name="email" id="email" class="contactForm">
+            <br><br>
+
+            <button id="submit">Submit</button><button id="cancel">Cancel</button>
+        </div>
+       
+        <div class="contactBook">
+
+        </div>
+
     </div>
-    <div>Child3</div>
+
+    <div id="editContact" style="display: none">
+            <div class="EditForm">
+                <h4>Edit this Contact</h4>
+                    <label for="fullName2">Name </label><input type="text"  id="fullName2" class="contactForm2">
+                
+                    <label for="phoneNumber2">Phone Number</label><input type="number2" id="phoneNumber2" class="contactForm2">
+                
+                    <label for="address2">Address</label><textarea type="text" id="address2" cols="30" rows="10" class="contactForm2"></textarea>
+                
+                    <label for="email2">e-Mail</label><input type="emai2l" name="emai2l" id="email2" class="contactForm2">
+                    <br><br>
+        
+                    <button id="submit2">Submit</button><button id="cancel2">Cancel</button>
+                </div>
     </div>
+
+
+
+
+
+
+
     <script src="./script/jquery-3.3.1.min.js"></script>
     <script src="./script/popper.min.js"></script>
     <script src="./script/bootstrap.min.js"></script>
     <script src="./script/font-awesome-all.js"></script>
-    <script src="./script/index.js"></script>
+    <script src="script/index.js"></script>
 
-<script>
-$.get('./index2.html',function(data){
-  $('div.parent').html(data);
-})
-</script>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-crossorigin="anonymous"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-crossorigin="anonymous"></script> -->
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-crossorigin="anonymous"></script> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script> -->
+        <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script> -->
 
 </body>
 
